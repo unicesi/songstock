@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="sales.subsystem">
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="shoppingcart.logic.ejb.jar" deploy-path="/" handle="module:/resource/shoppingcart.logic.ejb/shoppingcart.logic.ejb">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="sales.dto.jar" deploy-path="/lib" handle="module:/resource/sales.dto/sales.dto">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="sales.persistence.jpa.jar" deploy-path="/" handle="module:/resource/sales.persistence.jpa/sales.persistence.jpa">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="users.dto.jar" deploy-path="/lib" handle="module:/resource/users.dto/users.dto">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="purchasehistory.logic.ejb.jar" deploy-path="/" handle="module:/resource/purchasehistory.logic.ejb/purchasehistory.logic.ejb">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="purchasehistory.logic.api.jar" deploy-path="/lib" handle="module:/resource/purchasehistory.logic.api/purchasehistory.logic.api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="sales.persistence.api.jar" deploy-path="/lib" handle="module:/resource/sales.persistence.api/sales.persistence.api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="shoppingcart.logic.api.jar" deploy-path="/lib" handle="module:/resource/shoppingcart.logic.api/shoppingcart.logic.api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

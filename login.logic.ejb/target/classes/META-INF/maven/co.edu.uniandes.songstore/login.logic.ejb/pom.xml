@@ -1,0 +1,255 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<!-- Artifact metadata -->
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>login.logic.ejb</artifactId>
+	<packaging>jar</packaging>
+
+	<!-- Artifact description -->
+	<name>Song Store Login Logic using EJB</name>
+	<description>LoginEJB Description</description>
+	<url></url>
+
+	<!-- parent POM -->
+	<parent>
+		<artifactId>master.pom</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>..\master.pom\pom.xml</relativePath>
+		<groupId>co.edu.uniandes.songstore</groupId>
+	</parent>
+
+	<!-- Artifact dependencies -->
+	<dependencies>
+	
+		<!-- Dependencies to other assets -->
+		<!-- ============================ -->
+		
+		<dependency>
+			<groupId>co.edu.uniandes.songstore</groupId>
+			<artifactId>login.logic.api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>co.edu.uniandes.songstore</groupId>
+			<artifactId>user.persistence.api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>	
+	
+		<!-- Java EE 6 api -->
+		<!-- NOTE: javax:javaee-api:6.0 cannot be used for testing -->
+		<dependency>
+			<groupId>org.glassfish.main</groupId>
+			<artifactId>javax.ejb</artifactId>
+			<version>4.0-b33</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- Bean utils (for object conversions) -->
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.8.3</version>
+		</dependency>
+		
+		<!-- Testing libraries -->
+		<!-- ================ -->
+		
+		<!-- JUnit -->
+		<dependency>
+      		<groupId>junit</groupId>
+      		<artifactId>junit</artifactId>
+      		<version>4.8.2</version>
+     		<type>jar</type>
+     		<scope>test</scope>
+      		<optional>true</optional>
+    	</dependency>
+    	
+		<!-- Arquillian -->
+		<dependency>
+			<groupId>org.jboss.arquillian.junit</groupId>
+			<artifactId>arquillian-junit-container</artifactId>
+			<version>${arquillian.version}</version>
+			<scope>test</scope>
+		</dependency>		
+    	
+		<!-- arquillian support for embedded glassfish -->
+		<dependency>
+			<groupId>org.jboss.arquillian.container</groupId>
+			<artifactId>arquillian-glassfish-embedded-3.1</artifactId>
+			<version>1.0.0.CR3</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- embedded glassfish 3.1.2 -->
+		<dependency>
+			<groupId>org.glassfish.main.extras</groupId>
+			<artifactId>glassfish-embedded-all</artifactId>
+			<version>${glassfish-embedded.version}</version>
+			<scope>test</scope>
+		</dependency>    	
+		
+		<!-- Testing dependencies -->
+		<!-- ==================== -->		
+
+		<!-- Persistence JPA Implementation -->
+		<dependency>
+			<groupId>co.edu.uniandes.songstore</groupId>
+			<artifactId>user.persistence.jpa</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Derby database for java -->
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derby</artifactId>
+			<version>${derby.version}</version>
+			<scope>test</scope>
+		</dependency>	    	
+		<!-- AspectJ -->
+		<dependency>
+	    	<groupId>org.aspectj</groupId>
+	    	<artifactId>aspectjrt</artifactId>
+	    	<version>1.7.0</version>
+		</dependency>
+	</dependencies>
+
+	<!-- Build process -->
+	<build>
+
+		<!-- final artifact name -->
+		<finalName>${project.artifactId}</finalName>
+		
+		<!-- default goal -->
+		<defaultGoal>package</defaultGoal>
+
+		<!-- additional resources for testing with glassfish -->
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+			</testResource>
+			<testResource>
+				<directory>src/test/resources-glassfish-embedded</directory>
+			</testResource>
+		</testResources>
+				
+		<!-- plugins -->
+		<plugins>
+
+			<!-- Compiler plugin enforces Java 1.6 compatiblity -->		
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>${jdk.level}</source>
+					<target>${jdk.level}</target>
+				</configuration>
+			</plugin>		
+		
+			<!-- EJB configuration files -->
+	        <plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-ejb-plugin</artifactId>
+	            <version>2.3</version>
+	            <configuration>
+	                <ejbVersion>3.0</ejbVersion>
+	            </configuration>
+	        </plugin>		
+	        
+ 			<!-- Unit testing and reporting -->
+			<plugin>
+            	<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.12</version>
+				<configuration>
+                    
+					<!-- use a different JVM for server container -->
+              		<forkMode>always</forkMode>
+
+					<classpathDependencyExcludes>
+						<!-- exclude code absent api -->
+						<classpathDependencyExclude>javax:javaee-api</classpathDependencyExclude>
+						<classpathDependencyExclude>javax:javaee-web-api</classpathDependencyExclude>
+					</classpathDependencyExcludes>
+
+					<includes>
+						<!-- Names for Test classes -->
+						<include>**/*Test.java</include>
+					</includes>
+
+					<systemPropertyVariables>                            
+
+						<!-- use arquillian glassfish embedded configuration -->
+						<arquillian.launch>glassfish-embedded</arquillian.launch>
+
+						<!-- retarget derby logs -->
+						<java.util.logging.config.file>
+                        	${project.build.testOutputDirectory}/logging.properties
+						</java.util.logging.config.file>
+                        <derby.stream.error.file>
+							${project.build.directory}/derby.log
+						</derby.stream.error.file>
+					</systemPropertyVariables>
+				</configuration>
+			</plugin>
+			<!-- compilacion de aspectj -->
+	        <plugin>
+		        <groupId>org.codehaus.mojo</groupId>
+		        <artifactId>aspectj-maven-plugin</artifactId>
+		        <version>1.4</version>
+		        <executions>
+		          <execution>
+		            <goals>
+		              <goal>compile</goal>       <!-- use this goal to weave all your main classes -->
+		              <goal>test-compile</goal>  <!-- use this goal to weave all your test classes -->
+		            </goals>
+		            <configuration>
+		            	<source>1.6</source>
+		              	<target>1.6</target>
+		            </configuration>
+		          </execution>
+		        </executions>
+		      </plugin>		
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.codehaus.mojo
+										</groupId>
+										<artifactId>
+											aspectj-maven-plugin
+										</artifactId>
+										<versionRange>
+											[1.4,)
+										</versionRange>
+										<goals>
+											<goal>compile</goal>
+											<goal>test-compile</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+		
+</project>

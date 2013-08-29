@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="songstock.web.vaadin">
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="additionalcharges.tax.logic.api-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/additionalcharges.tax.logic.api/additionalcharges.tax.logic.api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="browsing.logic.api-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/browsing.logic.api/browsing.logic.api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="catalog.dto-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/catalog.dto/catalog.dto">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="creditcard.logic.api-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/creditcard.logic.api/creditcard.logic.api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="download.logic.api-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/download.logic.api/download.logic.api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="login.basic.logic.api-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/login.basic.logic.api/login.basic.logic.api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="payments.dto-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/payments.dto/payments.dto">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="payments.logic.api-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/payments.logic.api/payments.logic.api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="purchasehistory.logic.api-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/purchasehistory.logic.api/purchasehistory.logic.api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="register.logic.api-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/register.logic.api/register.logic.api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="sales.dto-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/sales.dto/sales.dto">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="searching.basic.logic.api-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/searching.basic.logic.api/searching.basic.logic.api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="shoppingcart.logic.api-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/shoppingcart.logic.api/shoppingcart.logic.api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="users.dto-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/users.dto/users.dto">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="songstock.web.vaadin"/>
+        <property name="java-output-path" value="/songstock.web.vaadin/build/classes"/>
+    </wb-module>
+</project-modules>

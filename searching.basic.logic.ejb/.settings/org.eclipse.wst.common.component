@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="searching.basic.logic.ejb">
+        <wb-resource deploy-path="/" source-path="/src" tag="defaultRootSource"/>
+        <property name="ClientJARURI" value="searching.basic.logic.api.jar"/>
+        <property name="ClientProject" value="searching.basic.logic.api"/>
+        <property name="java-output-path" value="/searching.basic.logic.ejb/build/classes"/>
+    </wb-module>
+</project-modules>

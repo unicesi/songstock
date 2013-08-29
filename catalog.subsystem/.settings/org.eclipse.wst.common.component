@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="catalog.subsystem">
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="searching.basic.logic.ejb.jar" deploy-path="/" handle="module:/resource/searching.basic.logic.ejb/searching.basic.logic.ejb">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="catalog.persistence.api.jar" deploy-path="/lib" handle="module:/resource/catalog.persistence.api/catalog.persistence.api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="catalog.persistence.jpa.jar" deploy-path="/" handle="module:/resource/catalog.persistence.jpa/catalog.persistence.jpa">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="catalog.dto.jar" deploy-path="/lib" handle="module:/resource/catalog.dto/catalog.dto">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="browsing.logic.ejb.jar" deploy-path="/" handle="module:/resource/browsing.logic.ejb/browsing.logic.ejb">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="browsing.logic.api.jar" deploy-path="/lib" handle="module:/resource/browsing.logic.api/browsing.logic.api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="download.logic.ejb.jar" deploy-path="/" handle="module:/resource/download.logic.ejb/download.logic.ejb">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="sales.dto.jar" deploy-path="/lib" handle="module:/resource/sales.dto/sales.dto">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="download.logic.api.jar" deploy-path="/lib" handle="module:/resource/download.logic.api/download.logic.api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="searching.basic.logic.api.jar" deploy-path="/lib" handle="module:/resource/searching.basic.logic.api/searching.basic.logic.api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

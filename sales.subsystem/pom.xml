@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>songstock</groupId>
+		<artifactId>songstock.master</artifactId>
+		<version>1.0</version>
+		<relativePath>../songstock.master/pom.xml</relativePath>
+	</parent>
+	<artifactId>sales.subsystem.ear</artifactId>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>../sales.persistence.api</module>
+		<module>../sales.persistence.jpa</module>
+		<module>../purchasehistory.logic.api</module>
+		<module>../purchasehistory.logic.ejb</module>
+		<module>../shoppingcart.logic.api</module>
+		<module>../shoppingcart.logic.ejb</module>
+		<module>../sales.subsystem.test</module>
+	</modules>
+
+</project>

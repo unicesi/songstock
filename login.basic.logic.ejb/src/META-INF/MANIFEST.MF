@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Class-Path: login.basic.logic.api.jar
+

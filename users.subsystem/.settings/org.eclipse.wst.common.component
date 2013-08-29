@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="users.subsystem">
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="users.persistence.jpa.jar" deploy-path="/" handle="module:/resource/users.persistence.jpa/users.persistence.jpa">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="login.basic.logic.ejb.jar" deploy-path="/" handle="module:/resource/login.basic.logic.ejb/login.basic.logic.ejb">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="users.persistence.api.jar" deploy-path="/lib" handle="module:/resource/users.persistence.api/users.persistence.api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="users.dto.jar" deploy-path="/lib" handle="module:/resource/users.dto/users.dto">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="login.basic.logic.api.jar" deploy-path="/lib" handle="module:/resource/login.basic.logic.api/login.basic.logic.api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="register.logic.ejb.jar" deploy-path="/" handle="module:/resource/register.logic.ejb/register.logic.ejb">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="register.logic.api.jar" deploy-path="/lib" handle="module:/resource/register.logic.api/register.logic.api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

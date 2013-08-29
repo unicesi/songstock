@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>songstock</groupId>
+		<artifactId>songstock.master</artifactId>
+		<version>1.0</version>
+		<relativePath>../songstock.master/pom.xml</relativePath>
+	</parent>
+	<artifactId>catalog.subsystem.ear</artifactId>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>../catalog.persistence.api</module>
+		<module>../catalog.persistence.jpa</module>
+		<module>../browsing.logic.api</module>
+		<module>../browsing.logic.ejb</module>
+		<module>../searching.basic.logic.api</module>
+		<module>../searching.basic.logic.ejb</module>
+		<module>../download.logic.api</module>
+		<module>../download.logic.ejb</module>
+		<module>../catalog.subsystem.test</module>
+	</modules>
+
+</project>

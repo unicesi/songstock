@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="download.logic.ejb">
+        <wb-resource deploy-path="/" source-path="/src" tag="defaultRootSource"/>
+        <property name="java-output-path" value="/download.logic.ejb/build/classes"/>
+        <property name="ClientProject" value="download.logic.api"/>
+        <property name="ClientJARURI" value="download.logic.api.jar"/>
+    </wb-module>
+</project-modules>

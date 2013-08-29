@@ -1,0 +1,26 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>songstock</groupId>
+		<artifactId>songstock.master</artifactId>
+		<version>1.0</version>
+		<relativePath>../songstock.master/pom.xml</relativePath>
+	</parent>
+	<artifactId>payments.subsystem.ear</artifactId>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>../payments.persistence.api</module>
+		<module>../payments.persistence.jpa</module>
+		<module>../payments.logic.api</module>
+		<module>../payments.logic.ejb</module>
+		<module>../additionalcharges.tax.logic.api</module>
+		<module>../additionalcharges.tax.logic.ejb</module>
+		<module>../creditcard.persistence.api</module>
+		<module>../creditcard.persistence.jpa</module>
+		<module>../creditcard.logic.api</module>
+		<module>../creditcard.logic.ejb</module>
+		<module>../payments.subsystem.test</module>
+	</modules>
+</project>
